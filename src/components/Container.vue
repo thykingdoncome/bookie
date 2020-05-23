@@ -2,15 +2,15 @@
   <div class="page-container ma-0">
    <Header />
 
-   <div>
+   <div class="form py-1">
       <form id="form" @submit.prevent="fetchBooks">
-      <input type="text" id="query" v-model="query" placeholder="Search by title keyword" autofocus/>
-      <input type="text" id="author" v-model="authorName" placeholder="Search by Author"/>
-      <input type="submit" value="Submit">
+      <input type="text" class="mr-2 mb-1" id="query" v-model="query" placeholder="Search by title keyword" autofocus/>
+      <input type="text" class="mr-2 mb-1" id="author" v-model="authorName" placeholder="Search by Author"/>
+      <input type="submit" value="Search">
     </form>
    </div>
 
-    <div v-for="book in this.books" :key="book.id">
+    <div v-for="book in this.books" :key="book.id" class="book-wrapper my-2">
       <book
        :bookCategory="book.volumeInfo.categories && book.volumeInfo.categories[0]"
         :imgSrc="book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail"

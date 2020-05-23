@@ -1,13 +1,13 @@
 <template>
   <footer>
-    <div class="footer">
+    <div class="footer ma-0">
       <div>
-        <b> &copy;</b> <span>{{ copyRight }} All rights reserved</span>
+        <b> &copy;</b> <span>{{ copyRight }}</span>
       </div>
 
       <div>
         <a
-          href="https://github.com/thykingdoncome/"
+          href="https://github.com/thykingdoncome/bookie"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -39,36 +39,8 @@ export default {
 </script>
 
 <style lang="scss">
-// footer {
-// width: 100%;
-//   background: black;
-// }
 
-// .footer {
-//   width: 70%;
-//   margin: 0 auto;
-//   padding: 1em 0;
-//   color: white;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }
-// footer div:nth-of-type(1) {
-//   display: flex;
-//   align-items: center;
-// }
-// footer b {
-//   font-size: 1.7em;
-//   padding-right: 0.2em;
-// }
 // footer i {
-//   color: white;
-//   font-size: 2em;
-// }
 
-// @media screen and (max-width: 780px) {
-//   .footer {
-//     width: 95%;
-//   }
 // }
 </style>

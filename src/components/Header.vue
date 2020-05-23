@@ -1,5 +1,5 @@
 <template>
-  <div class="app-header">
+  <div class="app-header py-2">
     <div>
       <span class="logo">
         <h1>BOOKIE <i class="fas fa-book"></i></h1>
@@ -7,7 +7,7 @@
     </div>
 
     <div class="contact-wrapper">
-      <span class="contact">
+      <span class="contact mr-2">
         <i class="far fa-envelope"></i>
         <a href="mailto:davidisrael194@gmail.com" target="_top">
           davidisrael194@gmail.com</a

@@ -2,30 +2,152 @@
 @import 'variables';
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
 }
 
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $primary;
 
-    .page-container {
-      position: relative;
-      max-width: 1100px;
-      width: 90%;
-      min-height: calc(100vh - 50px);
+  a {
+    color: $secondary-bg;
+    font-family: "SF Pro Display Semibold";
+  }
+
+  .page-container {
+    position: relative;
+    max-width: 1100px;
+    width: 90%;
+    min-height: calc(100vh - 50px);
+
+    .app-header {
+      color: $secondary-bg;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "SF Pro Display Bold";
+
+      .contact-wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .form {
+      input {
+        border: none;
+        color: $primary;
+        border-radius: 4px;
+        font-family: "SF Pro Display Medium";
+        background: $secondary-bg;
+      }
+
+      input[type="text"] {
+        padding: .5rem 1rem;
+        font-size: 1.3rem;
+      }
+
+      input[type="submit"] {
+        font-size: 1.3rem;
+        padding: .5rem 1rem;
+      }
 
     }
+
+  }
+
+  footer {
+    width: 100%;
+    background: $dark-color;
 
     .footer {
+      max-width: 1100px;
+      width: 90%;
       height: 50px;
+      color: $secondary-bg;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.5rem;
+
+      div:nth-of-type(1) {
+        display: flex;
+        align-items: center;
+      }
+
+      i {
+        font-size: 1.5rem;
+      }
     }
+  }
+
+  .book-wrapper {
 
     .book {
-      // background: $back-ground;
-    }
+      display: flex;
+      align-items: center;
+      color: $primary;
 
+      .book-description {
+        width: 70%;
+        height: 500px;
+        background: $secondary-bg;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        font-family: "SF Pro Display Medium";
+      }
+
+      .image-section {
+        width: 30%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background: $dark-color;
+
+        a {
+          padding: .5rem 1rem;
+          background: $background;
+          width: fit-content;
+          border-radius: 4px;
+          transition: .5s;
+        }
+
+        a:hover {
+          opacity: 0.9;
+        }
+
+        .img {
+          height: 90%;
+          position: relative;
+          align-items: center;
+          display: flex;
+          align-items: center;
+
+          img {
+            margin: 0 auto;
+            height: 70%;
+            width: 70%;
+            transition: 1s all cubic-bezier(0.6, -0.28, 0.735, 0.045);
+          }
+
+          img:hover {
+            transform: scale(1.2, 1.2);
+          }
+        }
+      }
+    }
+  }
 }
