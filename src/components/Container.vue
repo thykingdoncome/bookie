@@ -55,7 +55,7 @@ export default {
     async fetchBooks() {
       try {
         const res = await axios.get(
-          `${VUE_APP_BASE_URL}?q=${this.query}+inauthor:${this.authorName}&key=${VUE_APP_API_KEY}`
+          `${VUE_APP_BASE_URL}?q=${this.query}+inauthor:${this.authorName}&key=${VUE_APP_API_KEY}&maxResults=40`
         );
         this.books = res.data.items;
         this.query = "";
