@@ -1,24 +1,21 @@
 <template>
-  <div class="book my-2">
-    <div class="image-section">
-      <div class="img">
-        <img :src="imgSrc" alt="bookcover" />
+      <div class="book">
+        <div class="img-box">
+          <img :src="imgSrc" alt="bookcover" class="img"/>
+        </div>
+        <div class="book-details">
+          <h5 v-if="bookTitle" class="mb-1">Title: {{ bookTitle }}</h5>
+          <em v-if="bookSubTitle" class="mb-1">Subtitle: {{ bookSubTitle }}</em>
+          <em v-if="bookAuthor" class="mb-1">Author: {{ bookAuthor }}</em>
+          <em v-if="bookCategory" class="mb-1">Category: {{ bookCategory }}</em>
+          <p v-if="description" class="mb-1 m-text">{{ description }}</p>
+          <p v-if="pubDate" class="mb-1">Date published: {{ pubDate }}</p>
+          <p v-if="publisher" class="mb-1">Publisher: {{ publisher }}</p>
+          <p v-if="pageCount" class="mb-2">Pages: {{ pageCount }}</p>
+          <a :href="bookInfo" target="_blank" class="ma-1"> Book Info</a>
+        </div>
       </div>
-        <a :href="bookInfo" target="_blank" class="ma-0"> Book Info</a>
-    </div>
 
-    <div class="book-description px-1">
-      <h2 v-if="bookTitle" class="py-1">Title: {{ bookTitle }}</h2>
-      <em v-if="bookSubTitle" class="py-1">Subtitle: {{ bookSubTitle }}</em>
-      <em v-if="bookAuthor" class="py-1">Author: {{ bookAuthor }}</em>
-      <em v-if="bookCategory" class="py-1">Category: {{ bookCategory }}</em>
-        <p v-if="description" class="py-1 m-text">{{ description }}</p>
-      <p v-if="pubDate" class="py-1">Date published: {{ pubDate }}</p>
-      <p v-if="publisher" class="py-1">Publisher: {{ publisher }}</p>
-      <p v-if="pageCount" class="py-1">Pages: {{ pageCount }}</p>
-    
-    </div>
-  </div>
 </template>
 
 <script>

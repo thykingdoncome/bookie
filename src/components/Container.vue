@@ -4,14 +4,16 @@
 
    <div class="form py-1">
       <form id="form" @submit.prevent="fetchBooks">
-      <input type="text" class="mr-2 mb-1" id="query" v-model="query" placeholder="Search by title keyword" autofocus/>
-      <input type="text" class="mr-2 mb-1" id="author" v-model="authorName" placeholder="Search by Author"/>
-      <input type="submit" value="Search">
+     <div class="fields">
+        <input type="text" class="mr-2" id="query" v-model="query" placeholder="Search by title keyword" autofocus/>
+      <input type="text" class="mr-2" id="author" v-model="authorName" placeholder="Search by Author"/>
+     </div>
+     <div class="search"> <input type="submit" value="Search"></div>
     </form>
    </div>
 
-    <div v-for="book in this.books" :key="book.id" class="book-wrapper my-2">
-      <book
+    <div class="book-container">
+      <book v-for="book in this.books" :key="book.id" 
        :bookCategory="book.volumeInfo.categories && book.volumeInfo.categories[0]"
         :imgSrc="book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail"
         :bookAuthor="book.volumeInfo.authors && book.volumeInfo.authors[0]"

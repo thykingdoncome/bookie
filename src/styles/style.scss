@@ -33,6 +33,11 @@
   a {
     color: $secondary-bg;
     font-family: "SF Pro Display Semibold";
+    transition: .5s;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   .page-container {
@@ -43,7 +48,7 @@
     min-height: calc(100vh - 50px);
 
     .app-header {
-      color: $secondary-bg;
+      color: $primary;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -61,23 +66,32 @@
     }
 
     .form {
-      input {
-        border: none;
-        color: $primary;
-        border-radius: 4px;
-        font-family: "SF Pro Display Medium";
-        background: $secondary-bg;
-        padding: .5rem 1rem;
-        font-size: 1.3rem;
 
-        &[type="submit"] {
-          cursor: pointer;
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        
+        input {
+          border: none;
+          color: $primary;
+          border-radius: 2px;
+          font-family: "SF Pro Display Medium";
+          background: $secondary-bg;
+          padding: .5rem 1rem;
+          font-size: 1.3rem;
 
-          &:hover {
-            opacity: .9;
+          &[type="submit"] {
+            cursor: pointer;
+
+            &:hover {
+              opacity: .9;
+            }
           }
         }
       }
+
     }
 
   }
@@ -106,64 +120,80 @@
       }
     }
   }
+}
 
-  .book-wrapper {
+// BOOK COMPONENT
+.book-container {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-    .book {
-      display: flex;
-      align-items: center;
-      color: $primary;
+  .book {
+    position: relative;
+    margin: 20px 0;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5);
 
-      .book-description {
-        width: 70%;
-        height: 500px;
-        background: $secondary-bg;
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-        font-family: "SF Pro Display Medium";
-      }
+    &:hover {
+      z-index: 1000;
+      transform: perspective(2000px) rotate(-10deg);
+      box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5);
 
-      .image-section {
-        width: 30%;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        background: $dark-color;
-
-        a {
-          padding: .5rem 1rem;
-          background: $background;
-          width: fit-content;
-          border-radius: 4px;
-          transition: .5s;
-
-          &:hover {
-            opacity: 0.9;
-          }
-        }
-
-        .img {
-          height: 90%;
-          position: relative;
-          align-items: center;
-          display: flex;
-          align-items: center;
-
-          img {
-            cursor: pointer;
-            margin: 0 auto;
-            height: 70%;
-            width: 70%;
-            transition: 1s all cubic-bezier(0.6, -0.28, 0.735, 0.045);
-
-            &:hover {
-              transform: scale(1.2, 1.2);
-            }
-          }
-        }
+      .img-box {
+        transform: rotateY(-135deg);
       }
     }
+
+    .img-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #000;
+      transform-origin: left;
+      z-index: 1;
+      transition: 1s;
+
+      .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .book-details {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 5px 20px 10px;
+      height: 100%;
+      width: 100%;
+      overflow-y: scroll;
+      font-family: "SF Pro Display Medium";
+
+      p,
+      em {
+        font-size: .8rem;
+        display: block;
+        word-spacing: .3rem;
+      }
+
+      a {
+        background: $primary;
+        padding: .5rem 1.3rem;
+        margin: 0 auto;
+      }
+    }
+
   }
 }
+
+@import 'mobile'
