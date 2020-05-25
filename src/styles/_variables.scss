@@ -13,6 +13,9 @@
     src: url("https://db.onlinewebfonts.com/t/179429c3795fb9aed42c526bd1133cc0.woff2") format("woff2");
 }
 
+@import '~sweetalert2/src/variables';
+@import '~sweetalert2/src/sweetalert2';
+
 $primary:  darkcyan;
 $background: darkslategray;
 $dark-color: rgb(0, 0, 0);
