@@ -14,9 +14,9 @@
 
     <div class="book-container">
       <book v-for="book in this.books" :key="book.id" 
-       :bookCategory="book.volumeInfo.categories && book.volumeInfo.categories[0]"
+       :bookCategory="book.volumeInfo.categories && book.volumeInfo.categories"
         :imgSrc="book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail"
-        :bookAuthor="book.volumeInfo.authors && book.volumeInfo.authors[0]"
+        :bookAuthor="book.volumeInfo.authors && book.volumeInfo.authors"
         :bookTitle="book.volumeInfo.title && book.volumeInfo.title"
         :bookSubTitle="book.volumeInfo.subtitle && book.volumeInfo.subtitle"
         :bookInfo="book.volumeInfo.infoLink && book.volumeInfo.infoLink"
